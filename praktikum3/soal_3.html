@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373020-Ima MN</title>
+    <style>
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            border: 2px solid black;
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        .judul {
+            background-color: #7b7979;
+            text-align: center;
+            color: white;
+        }
+
+        .hobi-box {
+            border: 1px solid black;
+            padding: 5px;
+            width: 250px;
+        }
+
+        .hobi-grid {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 5px;
+        }
+
+        fieldset {
+            width: 400px;
+            box-sizing: border-box;
+        }
+
+        .cek-hobi {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            width: 100%;
+        }
+
+        .hobi-item {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="soal_3proses.html" method="post">
+        <table align="center">
+            <tr>
+                <td colspan="2" class="judul">Personal Data</td>
+            </tr>
+            <tr>
+                <td>Nama</td>
+                <td><input type="text" name="nama" required></td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td><textarea name="alamat" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>
+                    <input id="lk" type="radio" name="jk" value="laki-laki" required>
+                    <label for="lk">Laki-laki</label><br>
+                    <input id="pr" type="radio" name="jk" value="perempuan" required>
+                    <label for="pr">Perempuan</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Tanggal Lahir</td>
+                <td>
+                    <select name="tgl" required>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>...</option>
+                        <option>31</option>
+                    </select>
+                    <select name="bulan" required>
+                        <option>Januari</option>
+                        <option>Februari</option>
+                        <option>Maret</option>
+                        <option>...</option>
+                        <option>Desember</option>
+                    </select>
+                    <select name="tahun" required>
+                        <option>1980</option>
+                        <option>1981</option>
+                        <option>1982</option>
+                        <option>...</option>
+                        <option>2024</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Jurusan</td>
+                <td>
+                    <select name="jurusan[]" multiple="multiple" size="4" required>
+                        <option value="teknik informatika">teknik informatika</option>
+                        <option value="sistem informasi">sistem informasi</option>
+                        <option value="elektro">elektro</option>
+                        <option value="sipil">sipil</option>
+                        <option value="ind">industri</option>
+                        <option value="sk">sistem komputer</option>
+                        <option value="kt">komputer thinking</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <fieldset>
+                        <legend>Hobi</legend>
+                        <div class="cek-hobi">
+                            <div class="hobi-item"><input type="checkbox" name="hobi" value="membaca"> Membaca</div>
+                            <div class="hobi-item"><input type="checkbox" name="hobi" value="voli"> Voli</div>
+                            <div class="hobi-item"><input type="checkbox" name="hobi" value="menulis"> Menulis</div>
+                            <div class="hobi-item"><input type="checkbox" name="hobi" value="badminton"> Badminton</div>
+                            <div class="hobi-item"><input type="checkbox" name="hobi" value="catur"> Catur</div>
+                            <div class="hobi-item"><input type="checkbox" name="hobi" value="golf"> Golf</div>
+                        </div>
+                    </fieldset>
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>
