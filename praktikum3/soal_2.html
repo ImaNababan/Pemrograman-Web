@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373020-Ima MN</title>
+    <style>
+        table {
+            border: 1px solid black; 
+        }
+        td {
+            padding: 5px;
+            border: 1px solid black; 
+        }
+        .no-border {
+            border: none; 
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td colspan="3" align="center" bgcolor="grey">
+                    <font size="6">Edit Profile</font>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="5" align="center">
+                    <img src="hihi.png" width="130" height="160"><br>
+                    <input type="button" value="Upload">
+                    <br><br>
+                </td>
+                <td class="no-border"><b>Name:</b></td>
+                <td class="no-border">Tim Berners-Lee</td>
+            </tr>
+            <tr>
+                <td class="no-border"><b>Position:</b></td>
+                <td class="no-border">
+                    <select>
+                        <optgroup label="Programmer">
+                            <option value="senior_programmer" selected>Senior Programmer</option>
+                            <option value="junior_programmer">Junior Programmer</option>
+                        </optgroup>
+                        <optgroup label="System Analyst">
+                            <option value="senior_analyst">Senior Analyst</option>
+                            <option value="junior_analyst">Junior Analyst</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="no-border"><b>Password:</b></td>
+                <td class="no-border"><input type="text"></td>
+            </tr>
+            <tr>
+                <td class="no-border"><b>Confirm Password:</b></td>
+                <td class="no-border"><input type="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="right" class="no-border">
+                    <input type="reset" value="Reset">
+                    <input type="submit" value="Update">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
