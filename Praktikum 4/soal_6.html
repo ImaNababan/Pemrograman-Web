@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid #98bf21;
+            width: 60%;
+            text-align: left;
+        }
+
+        th, td {
+            border: 1px solid #98bf21;
+            padding: 4px;
+        }
+
+        th {
+            background-color: #a2c037;
+            color: white;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            background-color: #a2c037;
+        }
+        .kuning {
+            background-color: #faf2a3;
+        }
+        .ijo{
+            background-color: #eaf2d3;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td class="kuning">Alfreds Futterkiste</td>
+            <td class="ijo">Maria Anders</td>
+            <td class="kuning">Germany</td>
+        </tr>
+        <tr>
+            <td class="ijo">Berglunds snabbköp</td>
+            <td class="kuning">Christina Berglund</td>
+            <td class="ijo">Sweden</td>
+        </tr>
+        <tr>
+            <td class="kuning">Centro comercial Moctezuma</td>
+            <td class="ijo">Francisco Chang</td>
+            <td class="kuning">Mexico</td>
+        </tr>
+        <tr>
+            <td class="ijo">Ernst Handel</td>
+            <td class="kuning">Roland Mendel</td>
+            <td class="ijo">Austria</td>
+        </tr>
+        <tr>
+            <td class="kuning">Island Trading</td>
+            <td class="ijo">Helen Bennett</td>
+            <td class="kuning">UK</td>
+        </tr>
+        <tr>
+            <td colspan="3" class="footer">&copy; www.w3schools.org</td>
+        </tr>
+    </table>
+</body>
+
+</html>
