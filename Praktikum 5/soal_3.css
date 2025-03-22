@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.header {
+    background-color: red;
+    width: 81.5%;
+    height: 70px;
+}
+
+.container {
+    display: flex;
+    gap: 10px; 
+}
+
+.box {
+    padding: 20px; 
+}
+
+
+.left {
+    background-color: blue;
+    width: 20%;
+    height: 300px;
+    margin-top: 10px;
+    float: left;
+}
+
+.content {
+    background-color: green;
+    width: 60%;
+    min-height: 150px;
+    float: left;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.yellow-in {
+    background-color: yellow;
+    width: 130px;
+    height: 130px;
+    float: right; 
+    margin-left: 5px; 
+    margin-bottom: 10px; 
+}
+
+.awal {
+    text-indent: 30px;
+}
+
+.content p {
+    text-align: justify;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}

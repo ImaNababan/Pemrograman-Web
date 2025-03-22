@@ -1,0 +1,102 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    background-color: yellow;
+    text-align: center;
+    font-size: 40px; 
+}
+
+.left-header {
+    width: 120px;
+    background-image: url(img/logo_zoo.png);
+    height: 100px;
+}
+
+.center-header {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.right-header {
+    width: 160px;
+    background-image: url(img/lion.png);
+    height: 100px;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.sidebar {
+    width: 120px;
+}
+
+.navigation-menu {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    background-image: url(img/bg_sea.png);
+    height: 600px;
+    text-align: center;
+    color: white;
+}
+
+.navigation-menu a {
+    color: white;
+    text-decoration: underline;
+}
+
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+p {
+    color: blue;
+    line-height: 1;
+}
+
+.footer {
+    color: black;
+}
+
+.main-content {
+    flex-grow: 0;
+    max-width: 600px; 
+    margin: auto; 
+}
+
+.image-container {
+    background-image: url(img/elephant.png);
+    background-size: cover; 
+    background-color: blue;
+    width: 200px;
+    height: 150px;
+    text-align: center;
+    margin: auto; 
+}
+
+.caption {
+    background-color: white;
+    border-top: 1px solid black;
+    color: blue;
+}
+
+footer {
+    background-color: blue;
+    width: 84%;
+    height: 20px;
+    float: right; 
+    text-align: right;
+    margin-left: 15px; 
+    margin-bottom: 200px;
+}

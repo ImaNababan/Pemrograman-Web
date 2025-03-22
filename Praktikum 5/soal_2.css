@@ -1,0 +1,44 @@
+.circle {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    margin: 50px auto; 
+}
+
+.circle img {
+    position: absolute;
+    width: 100px;
+    height: auto;
+}
+
+.red {
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.purpel {
+    top: 0;
+    left: 60px;
+    z-index: 2; 
+}
+
+.red2 {
+    top: 0;
+    left: 120px;
+    z-index: 1;
+}
+
+.setengah_atas {
+    top: 0;
+    left: 0;
+    z-index: 3; 
+}
+
+.setengah_atas2 {
+    top: 0;
+    left: 120px;
+    z-index: 3; 
+}
+
+
