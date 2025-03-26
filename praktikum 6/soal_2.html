@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+    <title>2373020-Ima MN</title>
+    <style>
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            padding: 5px 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function buatTabelPerkalian() {
+            let angka;
+            
+            do {
+                angka = prompt("Masukkan sebuah angka:");
+                if (isNaN(angka) || angka.trim() === "") {
+                    alert("Harap masukkan angka yang valid!");
+                }
+            } while (isNaN(angka) || angka.trim() === "");
+
+            angka = parseInt(angka);
+            const body = document.body;
+            const tabel = document.createElement("table");
+
+            for (let i = 1; i <= angka; i++) {
+                const baris = document.createElement("tr");
+
+                const kolom1 = document.createElement("td");
+                kolom1.textContent = i;
+                baris.appendChild(kolom1);
+
+                const kolom2 = document.createElement("td");
+                kolom2.textContent = "x";
+                baris.appendChild(kolom2);
+
+                const kolom3 = document.createElement("td");
+                kolom3.textContent = angka;
+                baris.appendChild(kolom3);
+
+                const kolom4 = document.createElement("td");
+                kolom4.textContent = "=";
+                baris.appendChild(kolom4);
+
+                const kolom5 = document.createElement("td");
+                kolom5.textContent = i * angka;
+                baris.appendChild(kolom5);
+
+                tabel.appendChild(baris);
+            }
+
+            body.appendChild(tabel);
+        }
+
+        buatTabelPerkalian();
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373020-Ima MN</title>
+    <style>
+            body {
+                font-family: 'Times New Roman', Times, serif;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                height: 100vh;
+                margin: 5px;
+                flex-direction: column;
+            }
+
+            table {
+                width: 800px;
+                height: 600px;
+                border-collapse: separate;
+                border-spacing: 3px;
+                margin-top: 20px;
+            }
+    
+            td {
+                width: 30px;
+                height: 30px;
+                text-align: center;
+                vertical-align: middle;
+            }
+    
+            .container {
+                text-align: left;
+                margin-bottom: 10px;
+            }
+    
+            .kotak {
+                background-color: #fba700;
+                color: #fba700;
+                font-weight: bold;
+            }
+        </style>
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="tinggi">Tinggi Piramida: </label>
+        <input type="number" id="tinggi" required min="1"><br><br>
+        <button onclick="buatPiramida()">proses</button>
+    </div>
+
+    <div id="piramida"></div>
+
+    <script>
+        function buatPiramida() {
+            const tinggi = parseInt(document.getElementById('tinggi').value);
+
+            if (isNaN(tinggi) || tinggi < 1) {
+                alert("Masukkan angka yang valid (lebih dari 0)");
+                return;
+            }
+
+            const piramidaContainer = document.getElementById('piramida');
+            piramidaContainer.innerHTML = "";
+
+            let html = "<table>";
+            for (let i = 1; i <= tinggi; i++) {
+                html += "<tr>";
+
+                for (let j = 0; j < (tinggi - i); j++) {
+                    html += "<td></td>";
+                }
+
+                for (let k = 0; k < (2 * i - 1); k++) {
+                    html += `<td class="kotak">*</td>`;
+                }
+
+                for (let j = 0; j < (tinggi - i); j++) {
+                    html += "<td></td>";
+                }
+
+                html += "</tr>";
+            }
+            html += "</table>";
+
+            piramidaContainer.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
