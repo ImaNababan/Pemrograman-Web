@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373020-Ima MN</title>
+</head>
+<body>
+    <style>
+        table {
+            margin-top: 5px;
+            border-collapse: collapse;
+        }
+        td {
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            border: 2px solid black;
+        }
+        input {
+            margin-bottom: 5px;
+        }
+        label {
+            display: inline-block;
+            width: 120px;
+        }
+        form {
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <label for="firstNumber">Angka Pertama </label>:
+        <input type="text" id="firstNumber" required><br>
+        <label for="secondNumber">Angka Kedua </label>:
+        <input type="text" id="secondNumber" required><br>
+        <button type="button" onclick="calculate()">Count</button>
+    </form>
+    <table>
+        <tr>
+            <td id="firstNumberDisplay"></td>
+            <td>+</td>
+            <td id="secondNumberDisplay"></td>
+            <td>=</td>
+            <td id="sumResult"></td>
+        </tr>
+        <tr>
+            <td id="firstNumberDisplayMinus"></td>
+            <td>-</td>
+            <td id="secondNumberDisplayMinus"></td>
+            <td>=</td>
+            <td id="differenceResult"></td>
+        </tr>
+    </table>
+
+    <script>
+        function calculate() {
+            const firstNumber = parseInt(document.getElementById('firstNumber').value);
+            const secondNumber = parseInt(document.getElementById('secondNumber').value);
+
+            if (isNaN(firstNumber) && isNaN(secondNumber)) {
+                alert("Angka pertama dan kedua harus angka.");
+                return;
+            } else if (isNaN(firstNumber)) {
+                alert("Angka pertama bukan angka.");
+                return;
+            } else if (isNaN(secondNumber)) {
+                alert("Angka kedua harus angka.");
+                return;
+            }
+
+            const additionResult = firstNumber + secondNumber;
+            const subtractionResult = firstNumber - secondNumber;
+
+            document.getElementById('firstNumberDisplay').innerHTML = firstNumber;
+            document.getElementById('secondNumberDisplay').innerHTML = secondNumber;
+            document.getElementById('firstNumberDisplayMinus').innerHTML = firstNumber;
+            document.getElementById('secondNumberDisplayMinus').innerHTML = secondNumber;
+
+            document.getElementById('sumResult').innerHTML = additionResult;
+            document.getElementById('differenceResult').innerHTML = subtractionResult;
+        }
+    </script>
+</body>
+</html>
