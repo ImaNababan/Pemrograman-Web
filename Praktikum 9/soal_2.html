@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373020 - Ima Maryati Nababan</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 350px;
+            text-align: left;
+        }
+
+        .judul,
+        td {
+            border: 2px solid #ffffff;
+            padding: 6px;
+        }
+
+        .judul {
+            background-color: #aabbaa;
+        }
+
+        .row2,
+        .row4 {
+            background-color: #ffccaa;
+        }
+
+        .row1,
+        .row3,
+        .row5 {
+            background-color: #aaccff;
+        }
+
+        .c3 {
+            background-color: #CCFFAA !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr class="judul">
+            <td>Position</td>
+            <td>Programming Language</td>
+            <td>Ratings</td>
+        </tr>
+        <tr class="row1" onmouseover="highlightRow(this)" onmouseout="resetRow(this)">
+            <td>1</td>
+            <td>C</td>
+            <td>18.058%</td>
+        </tr>
+        <tr class="row2" onmouseover="highlightRow(this)" onmouseout="resetRow(this)">
+            <td>2</td>
+            <td>Java</td>
+            <td>18.051%</td>
+        </tr>
+        <tr class="row3" onmouseover="highlightRow(this)" onmouseout="resetRow(this)">
+            <td>3</td>
+            <td>C++</td>
+            <td>9.707%</td>
+        </tr>
+        <tr class="row4" onmouseover="highlightRow(this)" onmouseout="resetRow(this)">
+            <td>4</td>
+            <td>PHP</td>
+            <td>9.662%</td>
+        </tr>
+        <tr class="row5" onmouseover="highlightRow(this)" onmouseout="resetRow(this)">
+            <td>5</td>
+            <td>(Visual) Basic</td>
+            <td>6.392%</td>
+        </tr>
+    </table>
+
+    <script>
+        function highlightRow(row) {
+            row.originalClass = row.className;
+            row.className = 'c3';
+        }
+
+        function resetRow(row) {
+            row.className = row.originalClass;
+        }
+    </script>
+
+</body>
+</html>
