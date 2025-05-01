@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2373020-Ima Maryati Nababan</title>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    table {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-collapse: collapse;
+    }
+
+    td {
+      vertical-align: top;
+      padding: 5px;
+    }
+
+    textarea {
+      width: 300px;
+      height: 100px;
+      resize: none;
+    }
+
+    .counter-box {
+        margin-top: 5px;
+        width: 50px;
+        border: 1px solid #ccc;
+        padding: 2px 5px;
+        font-size: 12px;
+        float: right;
+        text-align: right;
+        box-sizing: border-box;
+      }
+  </style>
+</head>
+<body>
+
+  <form>
+    <table>
+      <tr>
+        <td>Judul</td>
+        <td>:</td>
+        <td><input type="text" style="width: 300px;"></td>
+      </tr>
+      <tr>
+        <td>Deskripsi</td>
+        <td>:</td>
+        <td>
+          <textarea id="deskripsi" onkeyup="call_onKeyPress(this)" onkeydown="call_onKeyPress(this)"></textarea><br>
+          <div class="counter-box"><span id="txt2">0/256</span></div>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <script>
+    function call_onKeyPress(ob) {
+      let obval = ob.value;
+
+      if (obval.length > 256) {
+        ob.value = obval.substr(0, 256);
+        obval = ob.value;
+      }
+
+      document.getElementById("txt2").innerText = obval.length + "/256";
+    }
+  </script>
+
+</body>
+</html>
