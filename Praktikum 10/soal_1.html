@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2373020 - Ima MN</title>
+    <script src="jqury.js"></script>
+    <style>
+        ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        li.item {
+            display: inline-block;
+            position: relative;
+            background-color: rgb(255, 75, 159);
+            padding: 5px 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: 1px solid rgb(255, 75, 159);
+            color: white;
+            width: 150px;
+            text-align: left; 
+            box-sizing: border-box;
+            text-decoration: underline; 
+        }
+
+        li.item ol {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 1px;
+            background-color: white;
+            border: 2px solid rgb(255, 75, 159);
+            z-index: 100;
+            width: 100%;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li.item ol li {
+            display: block;
+            padding: 5px 8px;
+            background-color: white;
+            border-top: 1px solid rgb(255, 75, 159);
+            border-bottom: 1px solid rgb(255, 75, 159);
+            color: black;
+            text-align: left;
+            text-decoration: underline;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        li.item:hover {
+            text-decoration: underline solid;
+        }
+
+        li.item:hover ol {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<ol>
+    <li class="item">jQuery
+        <ol>
+            <li>Download</li>
+            <li>Documentation</li>
+            <li>Blog</li>
+        </ol>
+    </li>
+    <li class="item">Community
+        <ol>
+            <li>Mailing List</li>
+            <li>Tutorials</li>
+            <li>Demos</li>
+            <li>Plugins</li>
+        </ol>
+    </li>
+    <li class="item">Development
+        <ol>
+            <li>Source Code</li>
+            <li>Bug Tracking</li>
+            <li>Recent Changes</li>
+        </ol>
+    </li>
+</ol>
+
+<script>
+    $(document).ready(function(){
+        $("li.item ol").hide();
+
+        $("li.item").hover(
+            function(){
+                $("li.item ol").hide();
+                $(this).children("ol").show(); 
+            },
+            function(){
+                $(this).children("ol").hide();
+            }
+        );
+    });
+</script>
+
+</body>
+</html>
