@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373020-Ima MN</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .changeColors {
+            width: 150px;
+        }
+        #changeColors {
+            width: 150px;  
+
+        }
+        div {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            float: left;
+            border: 2px blue solid;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="changeColors">Change colors</button> <br/>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+        $("div").click(function () {
+            $(this).css("background-color", "red");
+        });
+
+        $("#changeColors").click(function () {
+            $("div").each(function () {
+                if ($(this).css("background-color") === "rgb(255, 0, 0)") {
+                    return false;
+                }
+                $(this).css("background-color", "yellow");
+            });
+        });
+    </script>
+</body>
+</html>

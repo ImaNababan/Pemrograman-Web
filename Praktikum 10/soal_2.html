@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373020 - Ima MN</title>
+    <script src="jqury.js"></script>
+    <style>
+        .bar{
+            padding: 10px 10px;
+        }
+        #daftar {
+            margin-top: 8px;
+        }
+        #daftar div {
+            margin: 6px 0;
+        }
+        .sorot {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="bar">
+        <input type="text" id="inputNama">
+        <button id="tambahTombol"> Add </button>
+        <button id="cariTombol"> Search </button>
+    </div>
+    <div id="daftar">
+        <div>John Resig</div>
+        <div>George Martin</div>
+        <div>Malcom John Sinclair</div>
+        <div>J. Ohn</div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#tambahTombol').on('click', function() {
+                var nama = $('#inputNama').val().trim();
+                if (nama) {
+                    $('<div></div>').text(nama).appendTo('#daftar');
+                    $('#inputNama').val('');
+                }
+            });
+
+            $('#cariTombol').on('click', function() {
+                var kueriCari = $('#inputNama').val().trim().toLowerCase();
+                if (kueriCari) {
+                    $('#daftar div').each(function() {
+                        var teks = $(this).text().toLowerCase();
+                        if (teks.includes(kueriCari)) {
+                            $(this).addClass('sorot');
+                        } else {
+                            $(this).removeClass('sorot');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2373020-Ima MN</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #search {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 300px;
+      font-size: 16px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      padding: 2px 0;
+    }
+    .highlight {
+      color: red;
+    }
+  </style>
+  <script src="jqury.js"></script>
+</head>
+<body>
+
+  <input type="text" id="search" placeholder="Cari perusahaan...">
+  <ul id="company-list">
+    <li>Sun Microsystem</li>
+    <li>Apache Software Foundation</li>
+    <li>Oracle Coorporation</li>
+    <li>International Bussiness Machines</li>
+    <li>Microsoft Coorporation</li>
+    <li>Apple Inc</li>
+    <li>Sap Ag</li>
+    <li>Accenture</li>
+    <li>Computer Sciences Coorporation</li>
+    <li>Google</li>
+    <li>Softbank</li>
+    <li>Yahoo</li>
+  </ul>
+
+  <script>
+    $(document).ready(function() {
+      $('#search').on('input', function() {
+        const keyword = $(this).val().toLowerCase();
+
+        $('#company-list li').each(function() {
+          const originalText = $(this).text();
+          const lowerText = originalText.toLowerCase();
+
+          if (keyword !== "" && lowerText.includes(keyword)) {
+            const regex = new RegExp('(' + keyword + ')', 'gi');
+            const highlighted = originalText.replace(regex, '<span class="highlight">$1</span>');
+            $(this).html(highlighted);
+          } else {
+            $(this).html(originalText); 
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
+

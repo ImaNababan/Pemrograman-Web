@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373020-Ima MN</title>
+    <script src="jqury.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid #000;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="50" align="center">
+                <input class="header" type="checkbox" /><br />
+                <hr>
+                <input class="body" type="checkbox" /><br />
+                <input class="body" type="checkbox" /><br />
+                <input class="body" type="checkbox" /><br />
+                <input class="body" type="checkbox" /><br />
+                <input class="body" type="checkbox" /><br />
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function() {
+            $('.header').on('change', function() {
+                var isChecked = $(this).prop('checked'); 
+                $('.body').prop('checked', isChecked);  // Set all body checkboxes to the header's state
+            });
+            $('.body').on('change', function() {
+                var allChecked = $('.body:checked').length === $('.body').length;
+                $('.header').prop('checked', allChecked);  // Update header checkbox based on body checkboxes' state
+            });
+        });
+    </script>
+</body>
+</html>
