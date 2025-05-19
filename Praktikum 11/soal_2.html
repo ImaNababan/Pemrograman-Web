@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>2373020 - Ima Maryati</title>
+  <script src="jquery.js"></script>
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .info-box {
+      width: 400px;
+      padding: 20px;
+
+    }
+
+    .input-style {
+      width: 100%;
+      padding: 2px;
+      border: 3px double #000; 
+    }
+    
+    button {
+      margin-top: 10px;
+      padding: 3px 6px;
+    }
+
+    .container {
+      width: 80%;
+      max-width: 800px;
+      border: 3px double black;
+      padding: 20px;
+      margin: 30px auto 0 auto;
+      background-color: #fff;
+      display: none;
+    }
+
+    hr.double {
+      border: 0;
+      border-top: 3px double #000;
+      margin: 30px 0;
+    }
+
+    .link {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    #buttonBottom {
+      width: 80%;
+      max-width: 800px;
+      margin: 10px auto 0 auto;
+      text-align: left; 
+    }
+    
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <div id="titleCell" class="input-style">Title</div>
+    <div id="contentCell" class="input-style">Content</div>
+    <div id="generatorCell" class="input-style">Generator</div>
+    <button type="button" onclick="loadData()">Look</button>
+  </div>
+
+  <div id="output" class="container"></div>
+  <div id="buttonBottom" style="width: 80%; max-width: 800px; margin: 10px auto 0 auto; text-align: left;"></div>
+
+
+  <script>
+    const data = {
+      "title": "Portal S1-Sistem Informasi",
+      "link": "http://si.itmaranatha.org",
+      "generator": "S1-SI FIT UKM",
+      "items": [
+        {
+          "title": "BIE02 - Pemrograman Web",
+          "link": "https://morning.maranatha.edu/course/view.php?id=4245",
+          "universitas": { "m": "http://www.itmaranatha.org/" },
+          "description": "Matakuliah ini akan mengenalkan dan mengajarkan mahasiswa tentang dasar-dasar dalam pemrograman web. Di sini mahasiswa akan mempelajari penulisan tag-tag HTML sebagai pembentuk dasar dari suatu halaman web, mahasiswa juga akan mempelajari CSS sebagai pelengkap fungsionalitas dari HTML.<br/>Selain itu mahasiswa juga akan mempelajari pemrograman web di sisi klien (client side scripting) dengan menggunakan Java Script. Dan sebagai pengenalan teknologi baru, mahasiswa juga akan mempelajari sekilas mengenai teknologi JQuery dan teknologi JSON.",
+          "published": "01-January-2023",
+          "author": "Dosen S1-SI",
+          "tags": "S1-Sistem Informasi, Pemrograman Web"
+        },
+        {
+          "title": "IS407 - Basis Data 2",
+          "link": "http://si.itmaranatha.org/index.php/is407-basis-data-2",
+          "universitas": { "m": "http://www.itmaranatha.org/" },
+          "description": "Mata kuliah ini mengajarkan kepada mahasiswa bahasa pemrograman SQL yang meliputi : Perintah SQL untuk mengambil data dari tabel dan mengurutkan data, fungsi-fungsi yang terdapat pada oracle seperti fungsi tanggal dll, Join table, Operasi DDL, DML, Constraint, Subquery, View, Index dan PL/SQL.",
+          "published": "01-January-2023",
+          "author": "Dosen S1-SI",
+          "tags": "S1-Sistem Informasi, Basis Data 2"
+        }
+      ]
+    };
+
+    function loadData() {
+      document.querySelector('.info-box').style.display = 'none';
+    
+      const output = document.getElementById('output');
+      let html = `
+        <h2><a href="${data.link}" class="link">${data.title}</a></h2>
+        <hr class="double">
+      `;
+    
+      data.items.forEach(course => {
+        html += `
+          <div style="margin-bottom:20px;">
+            <p><a href="${course.link}" class="link">${course.title}</a></p>
+            <p>By: ${course.author} / <i>${course.published}</i></p>
+            <p>${course.description}</p>
+            <p>Universitas: <a href="${course.universitas.m}" class="link">Click Here</a></p>
+            <p>Tag(s): ${course.tags}</p>
+          </div>
+        `;
+      });
+    
+      html += `<p>© ${data.generator}</p>`;
+      output.innerHTML = html;
+      output.style.display = 'block';
+      const buttonBottom = document.getElementById('buttonBottom');
+      buttonBottom.innerHTML = `<button type="button" onclick="reloadPage()">Look</button>`;
+    }
+    
+    function reloadPage() {
+      document.querySelector('.info-box').style.display = 'block';
+      document.getElementById('output').style.display = 'none';
+      document.getElementById('buttonBottom').innerHTML = '';
+    }
+    
+  </script>
+
+</body>
+</html>
