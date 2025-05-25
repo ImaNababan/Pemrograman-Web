@@ -10,3 +10,5 @@ if ($username == "admin" && $password == "admin") {
 }
 echo "<a href='soal_2.html' style='color: purple;'>kembali ke halaman login</a>";
 ?>
+
+
